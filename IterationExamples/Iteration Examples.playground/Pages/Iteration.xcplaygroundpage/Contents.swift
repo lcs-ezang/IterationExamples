@@ -11,8 +11,9 @@ import PlaygroundSupport
  Here is a simple loop that adds all the numbers from 1 to 4.
  */
 var sum = 0
-for value in 1...4 {
-    sum = sum + value
+for _ in 1...4 {
+    sum = sum+1
+    
 }
 sum         // equals 10 at this point
 
