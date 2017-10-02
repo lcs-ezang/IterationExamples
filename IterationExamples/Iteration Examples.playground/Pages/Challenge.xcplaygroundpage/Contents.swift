@@ -36,7 +36,6 @@ canvas.rotate(by: -90)
 }
 
 
-
 /*:
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
