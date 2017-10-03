@@ -14,26 +14,6 @@ import PlaygroundSupport
 // Create canvas
 let canvas = Canvas(width: 300, height: 300)
 
-canvas.lineColor = Color.green
-for _ in 1...4 {
-    for y in stride(from: 0, to: 300, by: 20) {
-        
-        y
-        
-        
-        canvas.drawLine(fromX: y, fromY: 0, toX: 300, toY: y)
-
-        
-        
-        
-        canvas
-        
-    }
-    
-canvas.translate(byX: 0, byY: 300)
-canvas.rotate(by: -90)
-
-}
 
 
 /*:

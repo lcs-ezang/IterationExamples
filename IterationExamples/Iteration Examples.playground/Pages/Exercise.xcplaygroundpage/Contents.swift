@@ -30,7 +30,7 @@ let canvas = Canvas(width: 300, height: 300)
 
 
 
-
+for _ in 1...4 {
 for y in stride(from: 0, to: 300, by: 20) {
     
     y
@@ -40,12 +40,14 @@ for y in stride(from: 0, to: 300, by: 20) {
     
     
     
-    
     canvas
     
 }
 
-
+canvas.translate(byX: 300, byY: 0)
+    canvas.rotate(by: 90)
+    
+}
 
 // Below this line, try combining a loop and a single statement to generate the goal
 

@@ -3,19 +3,6 @@
 //: The following two statements are required to make the playground run. Please do not remove.
 import Cocoa
 import PlaygroundSupport
-//: NOTE: Parts of this page are adapted from [The Swift Programming Language Guide - Control Flow](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ControlFlow.html#//apple_ref/doc/uid/TP40014097-CH9-ID120).
-/*:
- ## For-In Loops
- ### Basic For-In Loops
- You use the *for-in* loop to iterate over ranges of numbers.
- Here is a simple loop that adds all the numbers from 1 to 4.
- */
-var sum = 0
-for _ in 1...4 {
-    sum = sum+1
-    
-}
-sum         // equals 10 at this point
 
 /*:
  ### Skipping values in a range
@@ -31,26 +18,21 @@ let canvas = Canvas(width: 300, height: 400)
 // Line width
 canvas.defaultLineWidth = 5
 
+canvas.drawShapesWithBorders = false
 // Draw the "rungs" of a ladder
-for y in stride(from: 0, through: 400, by: 50) {
+for i in stride(from: 0, through: 500, by: 50) {
     
-    y
     
-    // Draw each rung
-    canvas.drawLine(fromX: 100, fromY: y, toX: 200, toY: y)
+    canvas.fillColor = Color(hue: 0, saturation: 100, brightness: i / 5, alpha: 100)
+    
+    canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: i, width: canvas.width, height: 50)
+    
     
     canvas
     
+    
+    
 }
-/*:
- ### Counting backwards
- You can use a *for-in* loop with the *stride* function to count backwards as well.
- */
-// Countdown, then blast off
-for value in stride(from: 10, through: 0, by: -1) {
-    print(value)
-}
-print("Blast off!")
 //: **NOTE:** Output will show up in the Debug area.
 //:
 //: If you don't see this, press **Command-Shift-Y**.
