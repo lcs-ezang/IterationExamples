@@ -33,6 +33,9 @@ for i in stride(from: 0, through: 360, by: 1) {
     
     
 }
+
+//: HI
+
 //: **NOTE:** Output will show up in the Debug area.
 //:
 //: If you don't see this, press **Command-Shift-Y**.

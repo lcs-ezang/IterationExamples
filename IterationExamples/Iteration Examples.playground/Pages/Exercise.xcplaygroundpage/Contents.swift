@@ -30,12 +30,13 @@ let canvas = Canvas(width: 300, height: 300)
 
 
 
-for _ in 1...4 {
-for y in stride(from: 0, to: 300, by: 20) {
+for r in 1...4 {
+for y in stride(from: 0, to: 300, by: 50) {
     
     y
-    
-
+    r
+    canvas.defaultLineWidth = r - 1
+    canvas.lineColor = Color(hue: y + 100, saturation: r * 20, brightness: 80 + r * 5, alpha: 100)
     canvas.drawLine(fromX: y, fromY: 0, toX: 300, toY: y)
     
     
