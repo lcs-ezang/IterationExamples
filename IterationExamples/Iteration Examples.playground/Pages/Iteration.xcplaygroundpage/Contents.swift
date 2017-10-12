@@ -13,28 +13,38 @@ import PlaygroundSupport
  For example, here how to use this type of loop to create a ladder image.
  */
 // Create canvas
-let canvas = Canvas(width: 360, height: 100)
+let eric = Canvas(width: 300, height: 300)
 
-// Line width
-canvas.defaultLineWidth = 5
+eric.translate(byX: 150, byY: 150)
 
-canvas.drawShapesWithBorders = false
+for i in 1...10{
+    
+    i
+    
+    eric.defaultLineWidth = i / 3
+    eric.lineColor = Color(hue: 360 - i*36, saturation: 60, brightness: 75, alpha: 100)
+    eric.drawLine(fromX: 0, fromY: -125, toX: 0, toY: 125)
+    eric.rotate(by: 18)
+    
+    eric
+    
+}
 
-for i in stride(from: 0, through: 360, by: 1) {
+eric.lineColor = Color.black
+eric.rotate(by: 180)
+eric.translate(byX: 0, byY: 100)
+eric.drawAxes()
+
+let v = 8
+for _ in 1...v{
+
+    eric.rotate(by: Degrees(306 / v))
+    eric.drawLine(fromX: 0, fromY: -40, toX: 0, toY: 40)
     
-    
-    canvas.fillColor = Color(hue: i, saturation: 100, brightness: 100, alpha: 100)
-    
-    canvas.drawRectangle(bottomLeftX: i, bottomLeftY: 0, width: 1, height: canvas.height)
-    
-    
-    canvas
     
     
     
 }
-
-//: HI
 
 //: **NOTE:** Output will show up in the Debug area.
 //:
@@ -43,4 +53,4 @@ for i in stride(from: 0, through: 360, by: 1) {
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
  */
-PlaygroundPage.current.liveView = canvas.imageView
+PlaygroundPage.current.liveView = eric.imageView
