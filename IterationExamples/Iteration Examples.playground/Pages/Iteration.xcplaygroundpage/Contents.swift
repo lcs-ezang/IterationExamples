@@ -13,38 +13,76 @@ import PlaygroundSupport
  For example, here how to use this type of loop to create a ladder image.
  */
 // Create canvas
-let eric = Canvas(width: 300, height: 300)
 
-eric.translate(byX: 150, byY: 150)
+let canvas = Canvas(width:600, height:600)
 
-for i in 1...10{
+// Position of circles
+for i in stride(from: 50, through: 600, by: 100){
+    for y in stride(from: 50, through: 600, by: 100){
+       
+        // Size of circle
+        for r in stride(from: 99, through: 20, by: -19){
+            
+            
+    // Color generator
+     let c = random(from: 0, toButNotIncluding: 361)
+      let s = random(from: 50, toButNotIncluding: 101)
+     let b = random(from: 75, toButNotIncluding: 101)
+     
+        // To prevent similar colours
+//    let d = c - 20
+//
+//            if c == d {
+//                let c = c + 20
+//            }else {
+//
+//            }
+            
+            
+            
+            // Color
+            canvas.fillColor = Color.init(hue: c, saturation: s, brightness: b, alpha: 100)
+        // Drawing the circle
+            canvas.drawEllipse(centreX: i, centreY: y, width: r, height: r)
+          
+        
+            
+            
     
-    i
-    
-    eric.defaultLineWidth = i / 3
-    eric.lineColor = Color(hue: 360 - i*36, saturation: 60, brightness: 75, alpha: 100)
-    eric.drawLine(fromX: 0, fromY: -125, toX: 0, toY: 125)
-    eric.rotate(by: 18)
-    
-    eric
-    
+    }
+}
 }
 
-eric.lineColor = Color.black
-eric.rotate(by: 180)
-eric.translate(byX: 0, byY: 100)
-eric.drawAxes()
 
-let v = 8
-for _ in 1...v{
 
-    eric.rotate(by: Degrees(306 / v))
-    eric.drawLine(fromX: 0, fromY: -40, toX: 0, toY: 40)
-    
-    
-    
-    
-}
+
+//let w = 6
+//let l = 6
+//for _ in 1...canvas.width/50{
+//    for _ in 1...canvas.height/50{
+//        let r = random(from: 1, toButNotIncluding: 3)
+//        let c = random(from: 0, toButNotIncluding: 360)
+//        let s = random(from: 50, toButNotIncluding: 101)
+//        let b = random(from: 50, toButNotIncluding: 101)
+//
+//        canvas.defaultLineWidth = r + 1
+//
+//        canvas.lineColor = Color(hue: c, saturation: s, brightness: b, alpha: 100)
+//        
+//        if r == 1{
+//            canvas.drawLine(fromX: 0, fromY: 0, toX: 50, toY: 50)
+//        }else{
+//
+//            canvas.drawLine(fromX: 50, fromY: 0, toX: 0, toY: 50)
+//        }
+//
+//        canvas.translate(byX: 50, byY: 0)
+//        
+//    }
+//    canvas.translate(byX: -300, byY: 50)
+//}
+
+
 
 //: **NOTE:** Output will show up in the Debug area.
 //:
@@ -53,4 +91,4 @@ for _ in 1...v{
  ## Template code
  The code below is necessary to see results in the Assistant Editor at right. Please do not remove.
  */
-PlaygroundPage.current.liveView = eric.imageView
+PlaygroundPage.current.liveView = canvas.imageView

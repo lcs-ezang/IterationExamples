@@ -50,6 +50,12 @@ canvas.translate(byX: 300, byY: 0)
     
 }
 
+
+
+
+
+
+
 // Below this line, try combining a loop and a single statement to generate the goal
 
 /*:
